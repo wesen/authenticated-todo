@@ -14,7 +14,7 @@ export const TodosProvider = ({children}) => {
             const latestTodos = await res.json()
             setTodos(latestTodos)
         } catch (err) {
-            console.err(err)
+            console.error(err)
         }
     }
 
@@ -32,7 +32,7 @@ export const TodosProvider = ({children}) => {
                 return res
             })
         } catch (err) {
-            console.err(err)
+            console.error(err)
         }
     }
 
@@ -53,7 +53,7 @@ export const TodosProvider = ({children}) => {
             })
 
         } catch (err) {
-            console.err(err)
+            console.error(err)
         }
     }
 
@@ -71,7 +71,7 @@ export const TodosProvider = ({children}) => {
                 return res
             })
         } catch (err) {
-            console.err(err)
+            console.error(err)
         }
     }
 

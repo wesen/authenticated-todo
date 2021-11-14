@@ -18,7 +18,7 @@ const ownsRecord = (handler) => async (req, res) => {
         req.record = existingRecord
         return handler(req, res)
     } catch (err) {
-        console.err(err)
+        console.error(err)
         res.statusCode = 500
         return res.json({msg: 'Something went wrong'})
     }
