@@ -27,9 +27,7 @@ export const TodosProvider = ({children}) => {
             })
             const newTodo = await res.json()
             setTodos((prevTodos) => {
-                const res =  [newTodo, ...prevTodos]
-                console.log("addTodo",res)
-                return res
+                return [newTodo, ...prevTodos]
             })
         } catch (err) {
             console.error(err)
@@ -48,7 +46,6 @@ export const TodosProvider = ({children}) => {
                 const existingTodos = [...prevTodos]
                 const existingTodo = existingTodos.find((todo) => todo.id === updatedTodo.id)
                 existingTodo.fields = updatedTodo.fields
-                console.log("updateTodo", existingTodos)
                 return existingTodos
             })
 
@@ -66,9 +63,7 @@ export const TodosProvider = ({children}) => {
             })
             await res.json()
             setTodos((prevTodos) => {
-                const res = prevTodos.filter((x) => x.id !== id)
-                console.log("deleteTodo", res)
-                return res
+                return prevTodos.filter((x) => x.id !== id)
             })
         } catch (err) {
             console.error(err)
