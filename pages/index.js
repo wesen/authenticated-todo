@@ -12,7 +12,7 @@ export default function Home({initialTodos, initialUser, errorMessage}) {
     const {user} = useUser()
     useEffect(() => {
         setTodos(initialTodos)
-    }, [])
+    })
     const res = (
         <div>
             <Head>

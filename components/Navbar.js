@@ -1,5 +1,6 @@
 import React from 'react';
 import {useUser} from "@auth0/nextjs-auth0";
+import Link from 'next/link'
 
 function LoginButtons() {
     const {user, error, isLoading} = useUser()
@@ -8,11 +9,11 @@ function LoginButtons() {
 
     if (user) {
         return (<div className='flex'>
-            <a href='/api/auth/logout' className='rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-4'>Logout</a>
+            <Link href='/api/auth/logout'><a className='rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-4'>Logout</a></Link>
         </div>)
     } else {
         return <div className="flex">
-            <a href='/api/auth/login' className='rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-4'>Login</a>
+            <Link href='/api/auth/login'><a className='rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-4'>Login</a></Link>
         </div>
     }
 }
